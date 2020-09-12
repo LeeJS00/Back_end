@@ -8,7 +8,7 @@ const base64crypto = password => {
 
 router.post('/', (req, res, next)=>{
     res.header("Access-Control-Allow-Origin", "*");
-    res.send(base64crypto(req.body.password))
+    res.send(base64crypto(req.body.password));
 })
 
 module.exports = router;
