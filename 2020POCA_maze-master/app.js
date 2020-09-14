@@ -10,6 +10,7 @@ var crypto = require('./routes/crypto');
 var indexRouter = require('./routes/index');
 var end_userRouter = require('./routes/end_user')(db);
 var answerRouter = require('./routes/answer')(db);
+var pageRouter = require('./routes/page')(db);
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use('/api/img', express.static('./public/image'))
 app.use('/api/end_user', end_userRouter);
 app.use('/api/crypto', crypto);
 app.use('/api/ans',answerRouter);
+app.use('/api/pages',pageRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
